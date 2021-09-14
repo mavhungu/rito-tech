@@ -1,0 +1,22 @@
+html{
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,*::before,*::after{
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+a, a::before, a::after{
+  text-decoration: none;
+  cursor: pointer;
+}
+.links{
+  color: aquamarine;
+  &:hover{
+    text-decoration: none;
+    color: red;
+  }
+}
