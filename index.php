@@ -29,30 +29,35 @@ function UsersName(){
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Rito tech asg</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <!--link rel="icon" href="assets/images/favicon.ico"-->
+    <link rel="icon" href="assets/img/ronewa.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <!--link rel="stylesheet" href="style.css"-->
-      <link rel="stylesheet" href="css/app.css">
+    <!--link rel="stylesheet" href="style.css"-->
+    <link rel="stylesheet" href="assets/css/app.css">
   </head>
   <body>
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand" href="index.php">MAVHUNGU RONEWA</a>
+      <a class="navbar-brand" href="index.php">
+          <img src="assets/img/ronewa.svg" class="rounded-circle img-fluid img-resonsive img-thumbnail" style="width: 40px !important;">
+      </a>
   </nav>
   <div class="container-fluid">
       <div class="row justify-content-center mt-3">
-          <div class="col-lg-6 col-sm-12">
-              <div style="hieght:20%;text-align:center">
+          <div class="col-lg-8 col-sm-12">
+              <div class="graph">
                   <!--h2-- class="page-header" >Call Reports </h2-->
                   <canvas  id="chartjs_bar"></canvas>
               </div>
           </div>
       </div>
       <div class="row justify-content-center mt-3">
-          <div class="col-lg-6 col-sm-12">
+          <div class="col-lg-8 col-sm-12">
               <div class="table-responsive-sm">
                   <table class="table table-dark table-striped table-bordered table-hover table-sm">
                       <thead class="table-info text-center">
@@ -84,7 +89,7 @@ function UsersName(){
                     var myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels:<?php echo json_encode($no_Calls); ?>,
+                            labels:<?php echo json_encode($months); ?>,
                             datasets: [{
                                 backgroundColor: [
                                    "#5969ff",
@@ -126,8 +131,8 @@ function UsersName(){
                                     },
                                 },
                             }*/
-     
-     
+
+
                     }
                     });
         </script>
