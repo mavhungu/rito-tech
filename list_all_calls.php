@@ -13,7 +13,6 @@ require_once 'functions.php';
     <link rel="icon" href="assets/img/ronewa.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--link rel="stylesheet" href="style.css"-->
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -26,41 +25,40 @@ require_once 'functions.php';
         <div class="row justify-content-center mt-3">
         <div class="col-lg-6 col-sm-12">
             <?php
-            
+
             if(isset($_GET['view']) && ($_GET['date'])){
 
                 global $con;
             
                 $id = $_GET['view'];
                 $date = $_GET['date'];
-            
-                 echo '<h3 class="text-center">'.$id.'-'.$date.'</h3>';
+
+                echo '<h3 class="text-center">'.$id.'-'.$date.'</h3>';
                  echo '<div class="table-responsive-sm">
-                 <table class="table table-dark table-striped table-bordered table-sm">
-                                <thead class="table-info">
-                                    <tr class="text-center">
-                                        <th>Call From</th>
-                                        <th>Call To</th>
-                                        <th>Time</th>
-                                        <th>Duration</th>
-                                        <th>Cost</th>
-                                    </tr>
-                                </thead>
-                                <tbody>';
+                    <table class="table table-dark table-striped table-bordered table-sm">
+                        <thead class="table-info">
+                            <tr class="text-center">
+                                <th>Call From</th>
+                                <th>Call To</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                            <tbody>';
                                 foreach($con->query("SELECT CallFrom, CallTo, CallTime , Duration, Cost FROM `bvscalls` WHERE CallFrom LIKE '$id%' and CallTime LIKE '$date%'") as $row){
-                                  
                                     echo "<tr class='text-center'>";
                                     echo "<td>" . $row['CallFrom'] . "</td>";
                                     echo "<td>" . $row['CallTo'] . "</td>";
                                     echo "<td>" . $row['CallTime'] . "</td>";
                                     echo "<td>" . $row['Duration'] . "</td>";
                                     echo "<td>" . $row['Cost'] . "</td>";
-                                    
+
                                     echo "</tr>";
+                                }
             }
-        }
-        echo '</tbody>
-                </table>
+                            echo '</tbody>
+                    </table>
                 </div>';
             ?>
             </div>

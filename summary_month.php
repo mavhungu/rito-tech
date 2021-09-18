@@ -21,47 +21,46 @@ require_once 'functions.php';
       </a>
   </nav>
   <div class="container-fluid">
-        <div class="row justify-content-center mt-3">
+      <div class="row justify-content-center mt-3">
         <div class="col-lg-6 col-sm-12">
-<?php
+            <?php
 
-if(isset($_GET['view'])){
+                if(isset($_GET['view'])){
 
-    global $con;
+                    global $con;
 
-    $id = $_GET['view'];
+                    $id = $_GET['view'];
 
-     echo '<h3 class="text-center">'.$id.'</h3>';
-     echo '<div class="table-responsive-sm">
-     <table class="table table-dark table-striped table-bordered table-sm">
-        <thead class="table-info">
-            <tr class="text-center">
-                <th>Extension</th>
-                <th>No.Calls</th>
-                <th>Total Cost</th>
-            </tr>
-        </thead>
-        <tbody>';
+                     echo '<h3 class="text-center">'.$id.'</h3>';
+                     echo '<div class="table-responsive-sm">
+                     <table class="table table-dark table-striped table-bordered table-sm">
+                        <thead class="table-info">
+                            <tr class="text-center">
+                                <th>Extension</th>
+                                <th>No.Calls</th>
+                                <th>Total Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>';
 
-    foreach($con->query("SELECT CallFrom, COUNT(CallTo) AS No_Calls, SUM(Cost) AS Total_Cost FROM bvscalls WHERE CallTime LIKE '$id%' GROUP BY CallFrom") as $row){
-        $CallFrom = $row['CallFrom'];
-        
-        echo "<tr class='text-center'>";
-        echo "<td><a class='links' href='list_all_calls.php?view=$CallFrom&date=$id'>" . $row['CallFrom'] . "</a></td>";
-        echo "<td>" . $row['No_Calls'] . "</td>";
-        echo "<td>" . $row['Total_Cost'] . "</td>";
-        
-        echo "</tr>";
-    }
-}
-echo '</tbody>
-        </table>
-        </div>';
-?>
+                    foreach($con->query("SELECT CallFrom, COUNT(CallTo) AS No_Calls, SUM(Cost) AS Total_Cost FROM bvscalls WHERE CallTime LIKE '$id%' GROUP BY CallFrom") as $row){
+                        $CallFrom = $row['CallFrom'];
 
-</div>
-</div>
-</div>
+                        echo "<tr class='text-center'>";
+                        echo "<td><a class='links' href='list_all_calls.php?view=$CallFrom&date=$id'>" . $row['CallFrom'] . "</a></td>";
+                        echo "<td>" . $row['No_Calls'] . "</td>";
+                        echo "<td>" . $row['Total_Cost'] . "</td>";
+                        echo "</tr>";
+                    }
+                }
+                echo '</tbody>
+                        </table>
+                        </div>';
+                ?>
+
+        </div>
+      </div>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

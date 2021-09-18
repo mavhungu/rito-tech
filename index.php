@@ -10,7 +10,7 @@ foreach($con->query("SELECT DATE_FORMAT(CallTime,'%Y-%m') month, COUNT(CallTo) A
     $no_Calls[] = $row['No_Calls'];
     $total_Cost[] = $row['Total_Cost'];
 }
-function UsersName(){
+function tableData(){
 
     global $con;
     $year = 2018;
@@ -29,7 +29,7 @@ function UsersName(){
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Rito tech asg</title>
+    <title>Rito tech Asg</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,20 +38,18 @@ function UsersName(){
     <link rel="icon" href="assets/img/ronewa.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--link rel="stylesheet" href="style.css"-->
     <link rel="stylesheet" href="assets/css/app.css">
   </head>
   <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand" href="index.php">
-          <img src="assets/img/ronewa.svg" class="rounded-circle img-fluid img-resonsive img-thumbnail" style="width: 40px !important;">
-      </a>
-  </nav>
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <a class="navbar-brand" href="index.php">
+              <img src="assets/img/ronewa.svg" class="rounded-circle img-fluid img-resonsive img-thumbnail" style="width: 40px !important;">
+          </a>
+      </nav>
   <div class="container-fluid">
       <div class="row justify-content-center mt-3">
           <div class="col-lg-8 col-sm-12">
               <div class="graph">
-                  <!--h2-- class="page-header" >Call Reports </h2-->
                   <canvas  id="chartjs_bar"></canvas>
               </div>
           </div>
@@ -61,17 +59,17 @@ function UsersName(){
               <div class="table-responsive-sm">
                   <table class="table table-dark table-striped table-bordered table-hover table-sm">
                       <thead class="table-info text-center">
-                      <tr>
-                          <th>Year - month</th>
-                          <th>No.calls</th>
-                          <th>Tottal Cost</th>
-                      </tr>
+                          <tr>
+                              <th>Year - month</th>
+                              <th>No.calls</th>
+                              <th>Tottal Cost</th>
+                          </tr>
                       </thead>
-                      <tbody>
-                      <?php
-                      UsersName();
-                      ?>
-                      </tbody>
+                          <tbody>
+                              <?php
+                                tableData();
+                              ?>
+                          </tbody>
                   </table>
               </div>
           </div>
@@ -85,56 +83,38 @@ function UsersName(){
 	<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	
 	<script type="text/javascript">
-          var ctx = document.getElementById("chartjs_bar").getContext('2d');
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels:<?php echo json_encode($months); ?>,
-                            datasets: [{
-                                backgroundColor: [
-                                   "#5969ff",
-                                    "#ff407b",
-                                    "#25d5f2",
-                                    "#ffc750",
-                                    "#2ec551",
-                                    "#7040fa",
-                                    "#ff004e"
-                                ],
-                                data:<?php echo json_encode($total_Cost); ?>,
-                                label: 'Total cost',
-
-
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    position: 'top',
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Chart.js Bar Chart'
-                                }
-                            }
-                            /*plugins: {
-                                legend: {
-                                    display: true,
-                                    position: 'bottom',
-                                    text: 'Chart.js Bar Chart',
-
-                                    labels: {
-                                        fontColor: '#71748d',
-                                        fontFamily: 'Circular Std Book',
-                                        fontSize: 14,
-                                        text: 'Chart.js Bar Chart'
-                                    },
-                                },
-                            }*/
-
-
+      var ctx = document.getElementById("chartjs_bar").getContext('2d');
+        var barGraph = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels:<?php echo json_encode($months); ?>,
+                datasets: [{
+                    backgroundColor: [
+                       "#5969ff",
+                        "#ff407b",
+                        "#25d5f2",
+                        "#ffc750",
+                        "#2ec551",
+                        "#7040fa",
+                        "#ff004e"
+                    ],
+                    data:<?php echo json_encode($total_Cost); ?>,
+                    label: 'Total cost',
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Bar Chart'
                     }
-                    });
-        </script>
+                }
+            }
+        });
+    </script>
   </body>
 </html>
