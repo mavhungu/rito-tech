@@ -1,5 +1,5 @@
 <?php
-require_once 'info.php';
+require_once '../connect/info.php';
 ?>
 <!doctype html>
 <html lang="en">

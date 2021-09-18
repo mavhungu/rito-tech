@@ -1,5 +1,5 @@
 <?php
-require_once 'files/info.php';
+require_once 'connect/info.php';
 global $con;
 $year = 2018;
 

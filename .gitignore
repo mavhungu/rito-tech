@@ -9,8 +9,9 @@ sass
 
 ###php file
 .idea
-files/info.php
+connect/info.php
 files/functions.php
 files/graph.php
 
+connect/
 
