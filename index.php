@@ -1,5 +1,5 @@
 <?php
-require_once 'info.php';
+require_once 'files/info.php';
 global $con;
 $year = 2018;
 
@@ -19,7 +19,7 @@ function tableData(){
         $month = $row['month'];
 
         echo "<tr>";
-        echo "<td><a class='links' href='summary_month.php?view=$month'>" . $row['month'] . "</a></td>";
+        echo "<td><a class='links' href='files/summary_month.php?view=$month'>" . $row['month'] . "</a></td>";
         echo "<td>" . $row['No_Calls'] . "</td>";
         echo "<td>" . $row['Total_Cost'] . "</td>";
         echo "</tr>";
@@ -60,7 +60,7 @@ function tableData(){
                   <table class="table table-dark table-striped table-bordered table-hover table-sm">
                       <thead class="table-info text-center">
                           <tr>
-                              <th>Year - month</th>
+                              <th>Year - Month</th>
                               <th>No.calls</th>
                               <th>Tottal Cost</th>
                           </tr>

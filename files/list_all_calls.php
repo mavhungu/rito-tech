@@ -1,24 +1,24 @@
 <?php
-require_once 'functions.php';
+require_once 'info.php';
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Rito tech asg</title>
+    <title>Rito tech Assignment</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <!--link rel="icon" href="assets/images/favicon.ico"-->
-    <link rel="icon" href="assets/img/ronewa.svg">
+    <link rel="icon" href="../assets/img/ronewa.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="index.php">
-            <img src="assets/img/ronewa.svg" class="rounded-circle img-fluid img-resonsive img-thumbnail" style="width: 40px !important;">
+        <a class="navbar-brand" href="../index.php">
+            <img src="../assets/img/ronewa.svg" class="rounded-circle img-fluid img-resonsive img-thumbnail" style="width: 40px !important;">
         </a>
     </nav>
     <div class="container-fluid">

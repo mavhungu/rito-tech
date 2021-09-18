@@ -1,4 +1,4 @@
-## Rito-tech Asg
+## Rito-tech project Assignment
 
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com)
