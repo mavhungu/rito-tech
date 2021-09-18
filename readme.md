@@ -1,11 +1,11 @@
-## Rito-tech project Assignment
+# Rito-tech project Assignment
 
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 
-# Project Questions
+## Project Questions
 
 This is a very brief description of what I have to produce using a single table used to capture details from a telephone system.
 
